@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Board</title>
+</head>
+<body>
+<h1>Board</h1>
+<table border="1">
+    <tr>
+        <td>ID</td>
+        <td>제목</td>
+        <td>내용</td>
+        <td>작성날짜</td>
+        <td>수정날짜</td>
+        <td>삭제</td>
+        <td>수정</td>
+    </tr>
+    <tr th:each="dto : ${list}">
+        <td th:text="${dto.id}"></td>
+        <td th:text="${dto.title}"></td>
+        <td th:text="${dto.content}"></td>
+        <td th:text="${dto.creationtime}"></td>
+        <td th:text="${dto.updatetime}"></td>
+        <td><button><a th:href="@{'delete?id=' + ${dto.id}}">삭제</a></button></td>
+        <td><button><a th:href="@{'update?id=' + ${dto.id}}">수정</a></button></td>
+    </tr>
+</table>
+
+<div><a th:href="@{/add}">글 작성</a></div>
+<hr>
+<div><a th:href="@{/loginForm}">로그인</a></div>
+<div><a th:href="@{/logout}">로그아웃</a></div>
+<hr>
+<br>
+<div><a th:href="@{/user}">유저</a></div>
+<!--<div><a th:href="@{/oauth}">Oauth2 로그인</a></div>-->
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>글 수정</title>
+</head>
+<body>
+<form th:action="@{/update}" method="post" th:object="${list}">
+    <div th:each="dto : ${list}">
+        <input type="text" name="id" th:value="${dto.id}" readonly="readonly"><br><br>
+        <input type="text" name="title" th:value="${dto.title}"><br><br>
+        <textarea name="content" rows="10" cols="21.5" th:text="${dto.content}"></textarea><br>
+        <button type="submit" value="수정">수정</button>
+    </div>
+</form>
+</body>
+</html>

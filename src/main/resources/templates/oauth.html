@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+<head>
+    <title>OAuth 2.0 login</title>
+    <!--<link rel="stylesheet" href="/css/login.css" />-->
+</head>
+<body>
+<!-- OAuth Google Login -->
+<a href="/oauth2/authorization/google" class="btn btn-sm btn-success active" role="button">구글 로그인</a><br>
+<a href="/oauth2/authorization/naver" class="btn btn-sm btn-success active" role="button">네이버 로그인</a><br>
+</body>
+</html>
